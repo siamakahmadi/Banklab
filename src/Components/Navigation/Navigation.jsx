@@ -6,10 +6,10 @@ export default function Navigation() {
     <div className="navigation">
       <motion.div className="logo" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>BankLab</motion.div>
       <div className="navList">
-        <a href="" className="navitem">How it Work</a>
-        <a href="" className="navitem">Feature</a>
-        <a href="" className="navitem">Pricing</a>
-        <a href="" className="navitem">Company</a>
+        <p className="navitem">How it Work</p>
+        <p className="navitem">Feature</p>
+        <p className="navitem">Pricing</p>
+        <p className="navitem">Company</p>
       </div>
       <div className="appleStore">
         <div className='logo'>
