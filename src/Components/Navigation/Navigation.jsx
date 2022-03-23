@@ -1,9 +1,10 @@
 import React from 'react'
 import './Navigation.scss'
+import { motion } from "framer-motion"
 export default function Navigation() {
   return (
     <div className="navigation">
-      <div className="logo">BankLab</div>
+      <motion.div className="logo" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>BankLab</motion.div>
       <div className="navList">
         <a href="" className="navitem">How it Work</a>
         <a href="" className="navitem">Feature</a>
