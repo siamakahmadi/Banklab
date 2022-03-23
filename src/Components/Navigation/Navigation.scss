@@ -1,0 +1,70 @@
+a {
+    text-decoration: none;
+    color: #fff;
+}
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 34px;
+    align-items: center;
+    .logo {
+        font-family: "Sk-Modernist";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 38px;
+        background: linear-gradient(82.87deg, #1498dd 2.84%, #0050c4 46.52%, #1498dd 87.05%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .navList {
+        display: none;
+        justify-content: space-around;
+        gap: 100px;
+        @media (min-width: 640px) {
+            display: flex;
+        }
+        a {
+            font-family: "Sk-Modernist";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+    .appleStore {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        @media (min-width: 640px) {
+            display: flex;
+        }
+        .title {
+            .cta {
+                font-family: "Sk-Modernist";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+                color: rgba(255, 255, 255, 0.7);
+            }
+            .market {
+                margin-top: -10px;
+                font-family: "Sk-Modernist";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+    }
+    .menueIcon {
+        display: block;
+        cursor: pointer;
+        @media (min-width: 640px) {
+            display: none;
+        }
+    }
+}
