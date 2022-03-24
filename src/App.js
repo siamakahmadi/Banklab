@@ -1,8 +1,8 @@
-import Home from './Views/Home/Home';
-
+// import Home from './Views/Home/Home';
+import Feature from './Views/Feature/Feature'
 function App() {
   return (
-   <Home/>
+   <Feature/>
   );
 }
 
