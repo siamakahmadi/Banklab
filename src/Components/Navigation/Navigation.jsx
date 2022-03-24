@@ -1,16 +1,32 @@
-import React from 'react'
+import React, { useState  } from 'react'
+
 import './Navigation.scss'
 import { motion } from "framer-motion"
+
 export default function Navigation() {
+
+  const [isActive, setIsActive] = useState(false);
+  const variants = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+
+  }
   return (
-    <div className="navigation">
-      <motion.div className="logo" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>BankLab</motion.div>
-      <div className="navList">
-        <p className="navitem">How it Work</p>
-        <p className="navitem">Feature</p>
-        <p className="navitem">Pricing</p>
-        <p className="navitem">Company</p>
-      </div>
+    <motion.div  className="navigation">
+      <motion.div initial="hidden" animate="visible" variants={variants} className="logo" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>BankLab</motion.div>
+      <motion.div initial="hidden" animate="visible" variants={variants} className="menueIcon" onClick={()=>isActive ? setIsActive( false) : setIsActive(true)}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="5" width="16.5" height="1.65" rx="0.825" fill="#C4C4C4" />
+          <rect x="4" y="11.6" width="16.5" height="1.65" rx="0.825" fill="#C4C4C4" />
+          <rect x="4" y="18.2" width="16.5" height="1.65" rx="0.825" fill="#C4C4C4" />
+        </svg>
+      </motion.div>
+      <motion.div initial="hidden" animate="visible" variants={variants} className={` navList  ${isActive ? 'active' : ''}`}>
+        <motion.p    className="navitem">How it Work</motion.p>
+        <motion.p className="navitem" >Feature</motion.p>
+        <motion.p className="navitem">Pricing</motion.p>
+        <motion.p className="navitem">Company</motion.p>
+      </motion.div>
       <div className="appleStore">
         <div className='logo'>
           <svg width="40" height="39" viewBox="0 0 40 39" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,13 +39,7 @@ export default function Navigation() {
           <p className='market'>AppleStore</p>
         </div>
       </div>
-      <div className='menueIcon'>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="5" width="16.5" height="1.65" rx="0.825" fill="#C4C4C4" />
-          <rect x="4" y="11.6" width="16.5" height="1.65" rx="0.825" fill="#C4C4C4" />
-          <rect x="4" y="18.2" width="16.5" height="1.65" rx="0.825" fill="#C4C4C4" />
-        </svg>
-      </div>
-    </div>
+
+    </motion.div>
   )
 }

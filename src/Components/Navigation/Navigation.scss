@@ -3,11 +3,18 @@ a {
     color: #fff;
 }
 .navigation {
-    display: flex;
+    display: grid;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 34px;
     align-items: center;
+    height: fit-content;
+    align-items: flex-start;
+
+    background: linear-gradient(180deg, rgba(11, 11, 13, 0.88) 0%, rgba(11, 11, 13, 0.8) 77.39%, rgba(11, 11, 13, 0.75) 90.62%, rgba(11, 11, 13, 0.11) 100%);    grid-template-columns: repeat(2, minmax(0, auto));
+    @media (min-width: 640px) {
+        grid-template-columns: repeat(3, minmax(0, auto));
+    }
     .logo {
         cursor: pointer;
         font-family: "Sk-Modernist";
@@ -34,6 +41,12 @@ a {
             font-size: 18px;
             line-height: 22px;
         }
+    }
+    .navList.active {
+        display: flex;
+        flex-direction: column;
+        transition: all 0.5s;
+       
     }
     .appleStore {
         display: none;
@@ -62,7 +75,9 @@ a {
         }
     }
     .menueIcon {
-        display: block;
+        display: flex;
+        justify-self: end;
+        align-self: center;
         cursor: pointer;
         @media (min-width: 640px) {
             display: none;
